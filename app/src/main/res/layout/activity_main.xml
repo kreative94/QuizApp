@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.android.quizapp.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/whats_new"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!--Featured QuizActivityQuiz Thumbnail-->
+    <LinearLayout
+        android:id="@+id/featured_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/wecandoit"
+        android:gravity="end|bottom"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:background="#83000000"
+            android:gravity="end"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <!--Title-->
+            <TextView
+                style="@style/HeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_title"
+                android:textColor="#FFFFFF" />
+
+            <!--Subtitle-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/quiz_tag_line"
+                android:textColor="#FFF" />
+
+            <!--goToQuizActivityQuiz Button -->
+            <Button
+                android:id="@+id/go_to_quiz"
+                style="@style/QuizButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:onClick="goToQuiz"
+                android:text="@string/start_quiz" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

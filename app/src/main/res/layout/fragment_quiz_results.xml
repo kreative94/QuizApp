@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context="com.example.android.quizapp.QuizResults">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="125dp"
+            android:orientation="vertical">
+
+            <!--Score-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/the_score"
+                    style="@style/HeaderText2"
+                    android:textSize="42dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    style="@style/HeaderText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="42dp"
+                    android:text="@string/out_of" />
+            </LinearLayout>
+            <!--Level-->
+            <TextView
+                android:id="@+id/level"
+                style="@style/HeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+
+        </LinearLayout>
+
+        <!--Try Again-->
+        <Button
+            android:id="@+id/try_again"
+            style="@style/ButtonStyleLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="32dp"
+            android:text="@string/try_again" />
+
+        <!--Main Menu-->
+        <Button
+            style="@style/ButtonStyleLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@id/try_again"
+            android:layout_margin="32dp"
+            android:text="@string/main_menu" />
+    </RelativeLayout>
+
+</FrameLayout>
