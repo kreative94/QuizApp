@@ -92,31 +92,23 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fill_in_blank"/>
+                <TextView
                     style="@style/QuestionStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/question2" />
+                    android:text="@string/question3" />
 
                 <!--Answers-->
-                <RadioGroup
-                    android:id="@+id/question3_answers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/franklin"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:background="#CCCCCC"
+                    android:layout_height="wrap_content"
+                    />
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/curie"/>
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/meitner"/>
-                </RadioGroup>
             </LinearLayout>
 
             <!--Question 4-->
@@ -223,6 +215,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/get_results"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submit"

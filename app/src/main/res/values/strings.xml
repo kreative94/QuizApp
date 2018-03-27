@@ -11,17 +11,17 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="go_to_quiz">Go</string>
-    <string name="question1">Who said,\"No one can make you feel insecure without your consent"\?</string>
-    <string name="question2">She was a pioneer in radiation, the first woman to win a Nobel Prize and the first person to win two Nobel Prizes</string>
-    <string name="question3">True or false: Women were given the right to vote in the US in 1919.</string>
+    <string name="fill_in_blank">Fill in the blank.</string>
+    <string name="question1">Who said, \"No one can make you feel insecure without your consent\"?</string>
+    <string name="question2">True or false: Women were given the right to vote in the US in 1919.</string>
+    <string name="question3">___________ was a pioneer in radiation, the first woman to win a Nobel Prize and the first person to win two Nobel Prizes</string>
     <string name="question4">She was the first female astronaut in the US.</string>
     <string name="question5">She was the first computer programmer.</string>
-    <string name="question6">Who was the first woman to serve the Supreme Court of the US</string>
+    <string name="question6">Who was the first woman to become a Supreme Court Justice?</string>
     <string name="isTrue">True</string>
     <string name="isFalse">False</string>
     <string name="smartie">You\'re a smart cookie!</string>
     <string name="out_of">out of 6</string>
-
 
     <!--Answers -->
     <string name="roosevelt">Eleanor Roosevelt</string>
@@ -45,5 +45,4 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>
