@@ -7,17 +7,6 @@
     android:padding="16dp"
     tools:context="com.example.android.quizapp.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/whats_new"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <!--Featured QuizActivityQuiz Thumbnail-->
     <LinearLayout
         android:id="@+id/featured_quiz"
         android:layout_width="match_parent"
@@ -58,7 +47,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:onClick="goToQuiz"
                 android:text="@string/start_quiz" />
         </LinearLayout>
     </LinearLayout>

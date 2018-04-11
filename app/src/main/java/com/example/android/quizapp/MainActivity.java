@@ -1,6 +1,5 @@
 package com.example.android.quizapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +13,15 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void goToQuiz(View view){
-        Intent toTheQuiz = new Intent(getApplicationContext(), WomenHistoryQuiz.class);
-        startActivity(toTheQuiz);
+        Button goToQuiz = findViewById(R.id.go_to_quiz);
+
+        goToQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toTheQuiz = new Intent(MainActivity.this, WomenHistoryQuiz.class);
+                startActivity(toTheQuiz);
+            }
+        });
     }
 }
