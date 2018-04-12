@@ -47,8 +47,7 @@
     <string name="explanation_three">Marie Curie</string>
     <string name="explanation_four">Sally Kristen Ride became the first American woman to fly in space. She worked for NASA from 1977 to 1987. Afterwards, she
     taught at the University of California. She looked for ways to educated girls about science and mathematics up until her passing in 2012.</string>
-    <string name="explanation_five">
-        Ada Lovelace is sometimes called the "first computer scientist" after she wrong a report Babbage\'s machine.
+    <string name="explanation_five">Ada Lovelace is sometimes called the "first computer scientist" after she wrote a report on Babbage\'s machine.
     She said that the device could be used to handle letters, symbols as well as repeat a series of instructions(which is known as looping).
     </string>
     <string name="explanation_six">Ginsburg, O\'Connor and Sotomayor are/were Supreme Court judges. O\'Connor was the first woman to hold this title and took the oath of office in 1981 and
@@ -56,5 +55,4 @@
     </string>
 
     <string name="blank">Fill in blank...</string>
-    <string name="results_button">See Score</string>
 </resources>

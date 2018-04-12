@@ -1,6 +1,7 @@
 package com.example.android.quizapp;
 
 import android.graphics.Color;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,61 +22,47 @@ public class WomenHistoryQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_women_history_quiz);
-    }
 
-    public void submitTheQuiz(View view){
         submitQuizButton = findViewById(R.id.get_results);
         submitQuizButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RadioButton correctAnswer1 = findViewById(R.id.roosevelt);
-                RadioButton correctAnswer2 = findViewById(R.id.is_false);
-                EditText correctAnswer3 = findViewById(R.id.curie);
-                RadioButton correctAnswer4 = findViewById(R.id.ride);
-                RadioButton correctAnswer5 = findViewById(R.id.lovelace);
-                CheckBox correctAnswer6One = findViewById(R.id.ginsburg);
-                CheckBox correctAnswer6Two = findViewById(R.id.sotomayor);
-                CheckBox correctAnswer6Three = findViewById(R.id.connor);
+                    RadioButton correctAnswer1 = findViewById(R.id.roosevelt);
+                    RadioButton correctAnswer2 = findViewById(R.id.is_false);
+                    EditText correctAnswer3 = findViewById(R.id.curie);
+                    RadioButton correctAnswer4 = findViewById(R.id.ride);
+                    RadioButton correctAnswer5 = findViewById(R.id.lovelace);
+                    CheckBox correctAnswer6One = findViewById(R.id.ginsburg);
+                    CheckBox correctAnswer6Two = findViewById(R.id.sotomayor);
+                    CheckBox correctAnswer6Three = findViewById(R.id.connor);
 
-                //Answer One
-                correctAnswer1.setTextColor(Color.parseColor("#20A428"));
-                boolean isCorrect1 = correctAnswer1.isChecked();
-                //Answer Two
-                correctAnswer2.setTextColor(Color.parseColor("#20A428"));
-                boolean isCorrect2 = correctAnswer2.isChecked();
-                //Answer Four
-                correctAnswer4.setTextColor(Color.parseColor("#20A428"));
-                boolean isCorrect4 = correctAnswer4.isChecked();
-                //Answer 5
-                correctAnswer5.setTextColor(Color.parseColor("#20A428"));
-                boolean isCorrect5 = correctAnswer5.isChecked();
-                //Checkboxes to 6
-                boolean isCorrect6PtOne = correctAnswer6One.isChecked();
-                boolean isCorrect6PtTwo = correctAnswer6Two.isChecked();
-                boolean isCorrect6PtThree = correctAnswer6Three.isChecked();
+                    //Answer One
+                    correctAnswer1.setTextColor(Color.parseColor("#20A428"));
+                    boolean isCorrect1 = correctAnswer1.isChecked();
+                    //Answer Two
+                    correctAnswer2.setTextColor(Color.parseColor("#20A428"));
+                    boolean isCorrect2 = correctAnswer2.isChecked();
+                    //Answer Four
+                    correctAnswer4.setTextColor(Color.parseColor("#20A428"));
+                    boolean isCorrect4 = correctAnswer4.isChecked();
+                    //Answer 5
+                    correctAnswer5.setTextColor(Color.parseColor("#20A428"));
+                    boolean isCorrect5 = correctAnswer5.isChecked();
+                    //Checkboxes to 6
+                    boolean isCorrect6PtOne = correctAnswer6One.isChecked();
+                    boolean isCorrect6PtTwo = correctAnswer6Two.isChecked();
+                    boolean isCorrect6PtThree = correctAnswer6Three.isChecked();
 
-                explainQuestion();
+                    explainQuestion();
+                    theWrongAnswers();
 
-                theWrongRadioAnswers();
+                    //Tally score from selected answers and show correct Answers
+                    theScore = theCorrectRadioAnswers(isCorrect1, isCorrect2, isCorrect4, isCorrect5) + theCorrectCheckboxAnswers(isCorrect6PtOne, isCorrect6PtTwo, isCorrect6PtThree) + correctEditTextAnswer(correctAnswer3);
 
-                //Tally score from selected answers and show correct Answers
-                theScore = theCorrectRadioAnswers(isCorrect1, isCorrect2, isCorrect4, isCorrect5) + theCorrectCheckboxAnswers(isCorrect6PtOne, isCorrect6PtTwo, isCorrect6PtThree) + correctEditTextAnswer(correctAnswer3);
-                submitButtonClicked();
-
-                Toast totalScore = Toast.makeText(WomenHistoryQuiz.this, "You scored" + theScore + " out of 6",Toast.LENGTH_LONG);
-                totalScore.show();
+                    Toast totalScore = Toast.makeText(WomenHistoryQuiz.this, "You scored " + theScore + " out of 6", Toast.LENGTH_LONG);
+                    totalScore.show();
             }
         });
-    }
-
-    public void submitButtonClicked(){
-        //String scoreMessage = displayResults(theScore);
-        //displayScore(scoreMessage);
-        submitQuizButton.setText(R.string.results_button);
-    }
-
-    public void theCorrectAnswersToQuiz(){
-
     }
 
     /**
@@ -129,29 +116,21 @@ public class WomenHistoryQuiz extends AppCompatActivity {
         if (correctText.getText().toString().equals("Marie Curie")) {
             baseScore = baseScore + 1;
             correctText.setTextColor(Color.parseColor("#20A428"));
-        } else{
+        } else {
             correctText.setTextColor(Color.parseColor("#AE0C2F"));
         }
         return theScore + baseScore;
     }
 
-    /**
-     * @param theScore displays the points the user has
-     * @return statement
-     */
-    private String displayResults(int theScore) {
-        return "You scored \n" + theScore + " out of 6";
-    }
-
-    public void theWrongAnswers(boolean isWrong, RadioButton wrongAnswerRadio){
+    public void wrongAnswer(boolean isWrong, RadioButton wrongAnswerRadio) {
         isWrong = wrongAnswerRadio.isChecked();
 
-        if(isWrong == true){
+        if (isWrong) {
             wrongAnswerRadio.setTextColor(Color.parseColor("#AE0C2F"));
         }
     }
 
-    public void theWrongRadioAnswers(){
+    public void theWrongAnswers() {
         RadioButton wrongAnsOne = findViewById(R.id.keller);
         boolean isWrongOne = wrongAnsOne.isChecked();
 
@@ -159,7 +138,7 @@ public class WomenHistoryQuiz extends AppCompatActivity {
         boolean isWrongTwo = wrongAnsTwo.isChecked();
 
         RadioButton wrongAnsThree = findViewById(R.id.is_true);
-        boolean isWrongThree =wrongAnsThree.isChecked();
+        boolean isWrongThree = wrongAnsThree.isChecked();
 
         RadioButton wrongAnsFour = findViewById(R.id.tereshkova);
         boolean isWrongFour = wrongAnsFour.isChecked();
@@ -173,19 +152,16 @@ public class WomenHistoryQuiz extends AppCompatActivity {
         RadioButton wrongAnsSeven = findViewById(R.id.conway);
         boolean isWrongSeven = wrongAnsSeven.isChecked();
 
-        theWrongAnswers(isWrongOne, wrongAnsOne);
-        theWrongAnswers(isWrongTwo, wrongAnsTwo);
+        wrongAnswer(isWrongOne, wrongAnsOne);
+        wrongAnswer(isWrongTwo, wrongAnsTwo);
+        wrongAnswer(isWrongThree, wrongAnsThree);
+        wrongAnswer(isWrongFour, wrongAnsFour);
+        wrongAnswer(isWrongFive, wrongAnsFive);
+        wrongAnswer(isWrongSix, wrongAnsSix);
+        wrongAnswer(isWrongSeven, wrongAnsSeven);
     }
 
-    /**
-     * @param theScore displays score
-     */
-    private void displayScore(String theScore) {
-        TextView testScoreView = findViewById(R.id.the_score);
-        testScoreView.setText(theScore);
-    }
-
-    public void explainQuestion(){
+    public void explainQuestion() {
         TextView explainOne = findViewById(R.id.explain_one);
         TextView explainTwo = findViewById(R.id.explain_two);
         TextView explainThree = findViewById(R.id.explain_three);
@@ -200,15 +176,4 @@ public class WomenHistoryQuiz extends AppCompatActivity {
         explainFive.setText(R.string.explanation_five);
         explainSix.setText(R.string.explanation_six);
     }
-
-    public void resetQuiz(){
-        //Reset score
-        theScore = 0;
-        baseScore = 0;
-
-        submitQuizButton.setText(R.string.submit_quiz);
-
-    }
-
-
 }
